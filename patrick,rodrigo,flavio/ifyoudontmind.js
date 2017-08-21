@@ -20,48 +20,40 @@
 
 //BONUS SECTION//
 
-var hour = 5;
-var min = 37;
-var period = "PM";
+// var hour = 5;
+// var min = 37;
+// var period = "PM";
 
 var str = "It's ";
 
-if(0 < min && min <= 10){
-    var str = str + hour +":"+ min;
-}else if(10 < min && min <= 20 && min !== 15){
-    var str = str + hour +":"+ min;
-}else if(20 < min && min < 30){
-    var str = str + hour +":"+ min;
-}else if(30 < min && min < 40){
-    var str = str + hour + ":"+ min;
-}else if(40 < min && min < 50 && min !== 45){
-    var str = str + hour + ":" + min;
-}else if(50 < min && min < 60){
-    var str = str + hour + ":" + min;
-}else if(min === 15){
-    var str = str + "a quarter after " + hour;
-}else if(min === 30){
-    var str = str + "a half past " + hour;
-}else if(min === 45){
-    var str = str + "a quarter till " + (hour+1);
-}else{
-    var str = str + hour + " o'clock";
+function time(hour, min, period) {
+    var period = period.toUpperCase();
+    if (min === 15) {
+        str = str + "a quarter after " + hour;
+    } else if (min === 30) {
+        str = str + "a half past " + hour;
+    } else if (min === 45) {
+        str = str + "a quarter till " + (hour + 1);
+    } else if (min < 60) {
+        str = str + hour + ":" + min;
+    } else {
+        str = str + hour + " o'clock";
+    }
+    if (period == "AM" && hour >= 7 && hour <= 11) {
+        str = str + " in the morning.";
+    } else if (period == "AM" && hour < 7 && hour >= 1) {
+        str = str + " in the early morning.";
+    } else if (period == "AM" && hour == 12) {
+        str = str + " midnight";
+    } else if (period == "PM" && hour >= 1 && hour <= 5) {
+        str = str + " in the afternoon";
+    } else if (period == "PM" && hour > 5 && hour <= 8) {
+        str = str + " in the evening";
+    } else if (period == "PM" && hour == 12) {ß
+        str = str + " noon";
+    } else {
+        str = str + " at night";
+    }
+    console.log(str);
 }
-
-if(period=="AM" && hour >= 7 && hour <= 11){
-    var str = str + " in the morning.";
-}else if(period=="AM" && hour < 7 && hour >= 1){
-    var str = str + " in the early morning.";
-}else if(period=="AM" && hour == 12){
-    var str = str + " midnight";
-}else if(period=="PM" && hour >= 1 && hour <= 5){
-    var str = str + " in the afternoon";
-}else if(period=="PM" && hour > 5 && hour <= 8){
-    var str = str + " in the evening";
-}else if(period=="PM" && hour==12){
-    var str = str + " noon";
-}else{
-  var str = str + " at night";
-}
-
-console.log(str);
+time(11, 59, "pm")
