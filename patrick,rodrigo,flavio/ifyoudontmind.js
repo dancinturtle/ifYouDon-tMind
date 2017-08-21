@@ -21,7 +21,7 @@
 //BONUS SECTION//
 
 var hour = 5;
-var min = 37;
+var min = 45;
 var period = "PM";
 
 var str = "It's ";
