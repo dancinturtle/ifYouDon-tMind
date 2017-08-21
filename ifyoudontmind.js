@@ -1,3 +1,6 @@
+/***************************************************/
+/****************Written by McCABE******************/
+/***************************************************/
 function ifYouDontMind(HOUR, MINUTE, PERIOD) {
 
 
@@ -28,3 +31,7 @@ function ifYouDontMind(HOUR, MINUTE, PERIOD) {
     console.log("it's just after " + HOUR + "in the " + TIMEOFDAY);
   }
 }
+
+
+//  ifYouDontMind(9,45,"PM")
+// ifYouDontMind(1,30,"AM")
