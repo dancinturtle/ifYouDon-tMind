@@ -4,13 +4,38 @@ function ifYouDontMind(HOUR,MINUTE,PERIOD) {
         str += "just after " + HOUR;
     }
     else {
-        str += "almost " + (HOUR + 1);
+        if (HOUR === 12){
+            str += "almost " + 1;
+        }
+        else{
+            str += "almost " + (HOUR + 1);
+        }
     }
     if (PERIOD === "AM") {
-        str += " in the morning.";
+        if (HOUR === 11) {
+            if(MINUTE > 30) {
+                str += " in the evening.";
+            } 
+            else{
+                str += " in the morning.";
+            }
+        }
+        else {
+            str += " in the morning.";
+        }
     }
     else {
-        str += " in the evening.";
+        if (HOUR === 11) {
+            if(MINUTE > 30) {
+                str += " in the morning.";
+            }
+            else{
+                str += " in the evening.";
+            }
+        }
+        else {
+            str += " in the evening.";
+        }
     }
     console.log(str);
     
