@@ -40,3 +40,5 @@ function ifYouDontMind(HOUR,MINUTE,PERIOD) {
     console.log(str);
     
 }
+
+ifYouDontMind(11, 45, "PM")
