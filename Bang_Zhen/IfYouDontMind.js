@@ -1,5 +1,5 @@
-var HOUR = 8;
-var MINUTE = 15;
+var HOUR = 11;
+var MINUTE = 45;
 var PERIOD = "PM";
 
 if(PERIOD == "AM"){
